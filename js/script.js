@@ -105,7 +105,6 @@ document.getElementById("city").addEventListener("keyup", (e) => {
     }
 });
 
-////////////////////////////////
 
 
 
