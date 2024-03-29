@@ -19,6 +19,14 @@ const getWeather = (city) => {
           wind_speed.innerHTML = response.wind.speed;
           // Convert temperature from Kelvin to Celsius
           temp.innerHTML = (response.main.temp - 273.15).toFixed(2); // Adjusted here
+
+          const img = document.getElementById('weatherIcon');
+
+          if (parseFloat( temp.innerHTML) > 25) {
+              img.src = "images/sun.png";
+          } else {
+              img.src = "images/cloudy.png";
+          }
           feels_like.innerHTML = (response.main.feels_like - 273.15).toFixed(2); // Adjusted here
           humidity.innerHTML = response.main.humidity;
           min_temp.innerHTML = (response.main.temp_min - 273.15).toFixed(2); // Adjusted here
@@ -35,6 +43,7 @@ document.getElementById("searchForm").addEventListener("submit", (e) => {
     const city = document.getElementById("city").value;
     getWeather(city);
 });
+
 
 // Initial call with default city
 getWeather("Jaipur");
