@@ -27,10 +27,19 @@
 		<div class="site-header">
 			<div class="container">
 				<a href="index.html" class="branding">
-					<img src="images/logo.png" alt="" class="logo">
-					<div class="logo-type">
-						<h1 class="site-title">My Weather App</h1>
-					</div>
+					<img src="images/fog.png" alt="" class="logo">
+					<style>
+    .logo-type h1.site-title {
+        transition: transform 0.5s, opacity 0.5s;
+    }
+</style>
+
+<div class="logo-type">
+    <h1 class="site-title">My Weather App</h1>
+</div>
+
+
+
 				</a>
 				<!-- Default snippet for navigation -->
 				<div class="main-navigation">
@@ -348,6 +357,21 @@
 		document.getElementById('currentDate').innerText = formattedDate;
 		// document.getElementById('currentDay').innerText = dayName; // Commented out because it's not used in your HTML
 	</script>
+
+	<script>
+    const title = document.querySelector('.site-title');
+
+    function changeWeather() {
+        title.style.transform = 'scale(1.2)';
+        title.style.opacity = '0.5';
+        setTimeout(() => {
+            title.style.transform = 'scale(1)';
+            title.style.opacity = '1';
+        }, 2500); // Change weather condition every 2.5 seconds
+    }
+
+    setInterval(changeWeather, 5000); // Change weather animation every 5 seconds
+</script>
 </body>
 
 </html>
