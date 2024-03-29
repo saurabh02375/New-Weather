@@ -1,6 +1,4 @@
 
-
-
 const cityName = document.getElementById('cityName');
 const cloud_pct = document.getElementById('cloud_pct');
 const wind_speed = document.getElementById('wind_speed');
@@ -80,6 +78,7 @@ const getSearch = (city) => {
         .catch(err => console.error(err));
 }
 
+
 const updateDropdown = (cities) => {
     dropdown.innerHTML = "";
     cities.forEach(city => {
@@ -106,9 +105,7 @@ document.getElementById("city").addEventListener("keyup", (e) => {
     }
 });
 
-
-
-
+////////////////////////////////
 
 const createPolygon = () => {
     const polygonData = {
@@ -156,6 +153,4 @@ const createPolygon = () => {
 };
 
 createPolygon();
-
-
 
