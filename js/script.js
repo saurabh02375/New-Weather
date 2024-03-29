@@ -105,3 +105,55 @@ document.getElementById("city").addEventListener("keyup", (e) => {
         dropdown.classList.remove("show");
     }
 });
+
+
+
+
+
+const createPolygon = () => {
+    const polygonData = {
+        name: "Polygon Sample",
+        geo_json: {
+            type: "Feature",
+            properties: {},
+            geometry: {
+                type: "Polygon",
+                coordinates: [
+                    [
+                        [-121.1958, 37.6683],
+                        [-121.1779, 37.6687],
+                        [-121.1773, 37.6792],
+                        [-121.1958, 37.6792],
+                        [-121.1958, 37.6683]
+                    ]
+                ]
+            }
+        }
+    };
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'appid': '362c3c7f7cbda9d5576917c239c3ef7f' // Replace with your actual API key
+        },
+        body: JSON.stringify(polygonData)
+    };
+
+    fetch('http://api.agromonitoring.com/agro/1.0/polygons?appid=362c3c7f7cbda9d5576917c239c3ef7f&duplicated=true')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to create polygon');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Polygon created successfully:');
+            console.log(data);
+            // Process the response as needed
+        })
+        .catch(err => console.error(err));
+};
+
+createPolygon();
+
