@@ -5,61 +5,53 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-
-	<title>My WEather App</title>
-
+	<title>Compass Starter by Ariona, Rian</title>
 	<!-- Loading third party fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
 	<!-- Loading main css file -->
 	<link rel="stylesheet" href="style.css">
-
 	<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
 		<script src="js/ie-support/respond.js"></script>
 		<![endif]-->
-
 </head>
 
-
 <body>
-
 	<div class="site-content">
 		<div class="site-header">
 			<div class="container">
 				<a href="index.html" class="branding">
 					<img src="images/logo.png" alt="" class="logo">
-
-
 					<div class="logo-type">
 						<h1 class="site-title">My Weather App</h1>
-
 					</div>
 				</a>
-
 				<!-- Default snippet for navigation -->
 				<div class="main-navigation">
 					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 					<ul class="menu">
-
-
+						<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
+						<li class="menu-item"><a href="news.html">News</a></li>
+						<li class="menu-item"><a href="live-cameras.html">Live cameras</a></li>
+						<li class="menu-item"><a href="photos.html">Photos</a></li>
+						<li class="menu-item"><a href="contact.html">Contact</a></li>
 					</ul> <!-- .menu -->
 				</div> <!-- .main-navigation -->
-
 				<div class="mobile-navigation"></div>
-
 			</div>
 		</div> <!-- .site-header -->
-
-		<div class="hero" data-bg-image="images/dark7.jpg">
+		<div class="hero" data-bg-image="images/banner.png">
 			<div class="container">
-				<form action="#" class="find-location">
-					<input type="text" id="city" placeholder="Find your location...">
-					<input type="submit" value="Find" type="submit" id="submit">
+				<form id="searchForm" action="#" class="find-location">
+					<input type="text" id="city" placeholder="Find your location..." oninput="capitalizeFirstLetter()"
+						autocomplete="off">
+					<input type="submit" value="Find">
 				</form>
+
+
 
 			</div>
 		</div>
@@ -68,19 +60,16 @@
 				<div class="forecast-container">
 					<div class="today forecast">
 						<div class="forecast-header">
-
 							<div class="day" id="currentDate"></div>
 							<!--    								 <div class="date" id="currentDay"></div> -->
-
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="location"> <span id="cityName"></span> </div>
 							Min Temperature <span id="min_temp"></span>
 							Max Temperature <span id="max_temp"></span>
 							<div class="degree">
-								<div class="num"><span id="temp"></span> <sup>o</sup>C
+								<div class="num"><span id="temp"></span><sup>o</sup>C
 								</div>
-
 								<div class="forecast-icon">
 									<img src="images/icons/icon-1.svg" alt="" width=90>
 								</div>
@@ -171,7 +160,6 @@
 				</div>
 			</div>
 		</div>
-
 		<main class="main-content">
 			<div class="fullwidth-block">
 				<div class="container">
@@ -179,28 +167,28 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-6">
 							<div class="live-camera">
-								<figure class="live-camera-cover"><img src="images/dark3.jpg" alt=""></figure>
+								<figure class="live-camera-cover"><img src="images/live-camera-1.jpg" alt=""></figure>
 								<h3 class="location">New York</h3>
 								<small class="date">8 oct, 8:00AM</small>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="live-camera">
-								<figure class="live-camera-cover"><img src="images/dark4.jpg" alt=""></figure>
+								<figure class="live-camera-cover"><img src="images/live-camera-2.jpg" alt=""></figure>
 								<h3 class="location">Los Angeles</h3>
 								<small class="date">8 oct, 8:00AM</small>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="live-camera">
-								<figure class="live-camera-cover"><img src="images/dark5.jpg" alt=""></figure>
+								<figure class="live-camera-cover"><img src="images/live-camera-3.jpg" alt=""></figure>
 								<h3 class="location">Chicago</h3>
 								<small class="date">8 oct, 8:00AM</small>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="live-camera">
-								<figure class="live-camera-cover"><img src="images/dark6.jpg" alt=""></figure>
+								<figure class="live-camera-cover"><img src="images/live-camera-4.jpg" alt=""></figure>
 								<h3 class="location">London</h3>
 								<small class="date">8 oct, 8:00AM</small>
 							</div>
@@ -208,7 +196,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="fullwidth-block" data-bg-color="#262936">
 				<div class="container">
 					<div class="row">
@@ -243,7 +230,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="fullwidth-block">
 				<div class="container">
 					<div class="row">
@@ -297,7 +283,6 @@
 				</div>
 			</div>
 		</main> <!-- .main-content -->
-
 		<footer class="site-footer">
 			<div class="container">
 				<div class="row">
@@ -316,46 +301,46 @@
 						</div>
 					</div>
 				</div>
-
-				<p class="colophon">Copyright 2024 Weather App Designed by Saurabh. All rights reserved</p>
+				<p class="colophon">Copyright 2014 Weather App Designed by Themezy. All rights reserved</p>
 			</div>
 		</footer> <!-- .site-footer -->
 	</div>
-
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
 		crossorigin="anonymous"></script>
-
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/script.js"></script>
-
 	<script>
+
+		function capitalizeFirstLetter() {
+			const input = document.getElementById("city");
+			const value = input.value;
+			if (value.length > 0) {
+				input.value = value.charAt(0).toUpperCase() + value.slice(1);
+			}
+		}
+
+		// Add event listener for the input field to capitalize the first letter
+		document.getElementById("city").addEventListener("change", capitalizeFirstLetter);
+
 		// Get current date
 		let currentDate = new Date();
-
 		// Array of days
 		const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
 		// Get day of the week (0-6) and use it to get the day name
 		let dayName = days[currentDate.getDay()];
-
 		// Get date, month, and year
 		let date = currentDate.getDate();
 		let month = currentDate.getMonth() + 1; // Month is 0-indexed, so we add 1
 		let year = currentDate.getFullYear();
-
 		// Format the date
 		let formattedDate = dayName + ', ' + date + ' ' + (month < 10 ? '0' + month : month) + ' ' + year;
-
 		// Display the current date and day in the HTML elements
 		document.getElementById('currentDate').innerText = formattedDate;
 		// document.getElementById('currentDay').innerText = dayName; // Commented out because it's not used in your HTML
 	</script>
-
-
-
 </body>
 
 </html>
